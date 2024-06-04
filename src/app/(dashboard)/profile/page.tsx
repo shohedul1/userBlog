@@ -2,15 +2,19 @@
 import Profiledetails from '@/components/Profiledetails/Profiledetails';
 import { UserProfile, fetchUserProfile } from '@/utils/services';
 import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 
 
 const ProfilePage = () => {
-    const [profile, setProfile] = useState([])
+    const [profile, setProfile] = useState([]);
 
     const { data: session, status } = useSession();
     const id = session?.user.id;
+
+ 
+
 
     useEffect(() => {
         const fetchProfileData = async () => {
@@ -23,6 +27,7 @@ const ProfilePage = () => {
         };
 
         if (status === 'authenticated' && id) {
+           
             fetchProfileData();
         } else if (status === 'unauthenticated') {
             // Handle unauthenticated state if necessary

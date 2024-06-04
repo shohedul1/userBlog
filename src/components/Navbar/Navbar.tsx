@@ -5,6 +5,7 @@ import { signOut, useSession } from 'next-auth/react';
 import { Pacifico } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 const pacifico = Pacifico({ subsets: ["latin"], weight: ["400"] }); // Corrected weights
@@ -26,6 +27,7 @@ const Navbar = () => {
         };
 
         if (status === 'authenticated' && id) {
+            
             fetchProfileData();
         } else if (status === 'unauthenticated') {
             // Handle unauthenticated state if necessary

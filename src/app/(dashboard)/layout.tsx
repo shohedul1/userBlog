@@ -3,16 +3,19 @@
 import Navbar from '@/components/Navbar/Navbar';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
     const { data: session, status } = useSession();
     const router = useRouter();
 
-    if (status === 'loading') {
-        return;
-    } else if (!session) {
-        router.push("/sigin");
-    }
+    useEffect(() => {
+        if (status === 'loading') {
+            return;
+        } else if (!session) {
+            router.push("/sigin");
+        }
+    }, [session, status])
 
 
 
