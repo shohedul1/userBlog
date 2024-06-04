@@ -7,9 +7,8 @@ import React from 'react'
 
 
 const Profiledetails = ({ profile }: any) => {
-    console.log(profile?.name)
     const { data: session } = useSession();
-    const imageUrl = profile?.avatar?.url || session?.user?.image || '/food_18.png';
+    const imageUrl = profile?.avatar?.url || session?.user?.image || '/signin.gif';
 
 
     return (

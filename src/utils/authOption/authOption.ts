@@ -5,7 +5,6 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { compare } from "bcryptjs";
 import connect from "@/utils/config/dbConfig";
 import User from "@/utils/models/auth";
-import { NextResponse } from "next/server";
 
 // Extend the Profile type to include the picture property
 interface Profile extends NextAuthProfile {

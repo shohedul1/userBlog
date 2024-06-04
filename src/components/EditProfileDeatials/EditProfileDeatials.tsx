@@ -65,6 +65,7 @@ const EditProfileDeatials = ({ profileEdit, params }: any) => {
                 toast.success("User updated successfully");
                 setTimeout(() => {
                     router.push("/profile");
+                   window.location.reload();
                 }, 500);
             } else {
                 toast.error("Error occurred while updating user.");

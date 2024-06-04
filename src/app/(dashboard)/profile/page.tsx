@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 
 
 const ProfilePage = () => {
-    const [profile, setProfile] = useState([]);
+    const [profile, setProfile] = useState([])
 
     const { data: session, status } = useSession();
     const id = session?.user.id;

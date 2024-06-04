@@ -1,5 +1,6 @@
 'use client';
 
+import { UserProfile, fetchUserProfile } from '@/utils/services';
 import { signOut, useSession } from 'next-auth/react';
 import { Pacifico } from 'next/font/google';
 import Image from 'next/image';
@@ -10,11 +11,30 @@ const pacifico = Pacifico({ subsets: ["latin"], weight: ["400"] }); // Corrected
 
 
 const Navbar = () => {
+    const [profile, setProfile] = useState<UserProfile | null>(null);
     const { data: session, status } = useSession();
+    const id = session?.user.id;
 
+    useEffect(() => {
+        const fetchProfileData = async () => {
+            if (id) {
+                const data = await fetchUserProfile(id);
+                if (data) {
+                    setProfile(data);
+                }
+            }
+        };
+
+        if (status === 'authenticated' && id) {
+            fetchProfileData();
+        } else if (status === 'unauthenticated') {
+            // Handle unauthenticated state if necessary
+        }
+    }, [id, status]);
     // Use a default imge if no avatar is found
-    const imageUrl = session?.user?.image || '/food_18.png';
+    const imageUrl = profile?.avatar?.url || session?.user?.image || '/signin.gif';
 
+    console.log('navbav', profile)
 
     const [toggle, setToggle] = useState(false);
 
