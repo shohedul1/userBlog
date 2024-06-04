@@ -41,14 +41,20 @@ const Profiledetails = ({ profile }: any) => {
                     <p className="text-2xl font-bold">Email:</p>
                     <p className='text-xl font-boldv text-gray-400'>{profile?.email}</p>
                 </div>
+
                 <div className="space-y-2">
                     <p className="text-2xl font-bold">Age:</p>
                     <p className='text-xl font-bold text-gray-400'>{profile?.age}</p>
                 </div>
 
                 <div className='space-y-2'>
-                    <p className="text-2xl font-bold">About Me</p>
+                    <p className="text-2xl font-bold">About Me:</p>
                     <p className='text-xl font-bold text-gray-400 '>{profile?.about}</p>
+                </div>
+
+                <div className='space-y-2'>
+                    <p className="text-2xl font-bold">Country:</p>
+                    <p className='text-xl font-bold text-gray-400 '>{profile?.country}</p>
                 </div>
 
                 <div className="space-y-2">
@@ -67,7 +73,7 @@ const Profiledetails = ({ profile }: any) => {
                 {profile?._id === session?.user.id && (
                     <Link
                         className="px-3 py-2 hover:bg-red-500 border border-red-500 hover:text-white transition-all duration-300 rounded-lg text-black font-bold"
-                        href={`/editprofile/${profile?._id}`}
+                        href={`/dashboard/editprofile/${profile?._id}`}
                     >
                         Edit
                     </Link>

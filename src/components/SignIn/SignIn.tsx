@@ -17,7 +17,7 @@ const initialState = {
     password: ""
 };
 
-const SigninPage = () => {
+const SignIn = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [state, setState] = useState(initialState);
     const [loading, setLoading] = useState(false);
@@ -49,7 +49,7 @@ const SigninPage = () => {
             if (result?.url) {
                 router.push(result.url);
             }
-            
+
             if (result?.ok) {
                 toast.success(result.ok);
             }
@@ -65,7 +65,7 @@ const SigninPage = () => {
     useEffect(() => {
         // Check if user is authenticated after component mounts
         if (status === 'authenticated') {
-            router.push('/');
+            router.push('/dashboard');
         }
     }, [status, router]);
 
@@ -112,11 +112,11 @@ const SigninPage = () => {
                         </button>
                         <span className="text-center text-white text-2xl">or</span>
 
-                        <button type="button" onClick={() => signIn("google", { callbackUrl: "/" })} className="mb-5 bg-white p-2 text-xl flex items-center gap-2 justify-center rounded-md">
+                        <button type="button" onClick={() => signIn("google", { callbackUrl: "/dashboard" })} className="mb-5 bg-white p-2 text-xl flex items-center gap-2 justify-center rounded-md">
                             <FcGoogle className="w-8 h-8" />
                             Google
                         </button>
-                        <button type="button" onClick={() => signIn("github", { callbackUrl: "/" })} className="bg-white p-2 text-xl flex items-center gap-2 justify-center rounded-md">
+                        <button type="button" onClick={() => signIn("github", { callbackUrl: "/dashboard" })} className="bg-white p-2 text-xl flex items-center gap-2 justify-center rounded-md">
                             <FaGithub className="w-8 h-8" />
                             Github
                         </button>
@@ -135,5 +135,5 @@ const SigninPage = () => {
     );
 };
 
-export default SigninPage;
+export default SignIn;
 

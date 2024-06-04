@@ -18,7 +18,7 @@ const EditProfileDeatials = ({ profileEdit, params }: any) => {
 
     const handleEditSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const { name, designation, age, location, about } = profileToEditState;
+        const { name, designation, age, location, about, country } = profileToEditState;
 
         if (!name) {
             toast.error("Name is required");
@@ -50,6 +50,7 @@ const EditProfileDeatials = ({ profileEdit, params }: any) => {
                 age,
                 location,
                 about,
+                country,
                 avatar: profileImg
             };
 
@@ -62,9 +63,9 @@ const EditProfileDeatials = ({ profileEdit, params }: any) => {
             });
 
             if (response.ok) {
-                toast.success("User updated successfully");
+                toast.success("User updated successfully", { position: 'top-center' });
                 setTimeout(() => {
-                    router.push("/profile");
+                    router.push("/dashboard/profile");
                 }, 500);
             } else {
                 toast.error("Error occurred while updating user.");
@@ -101,7 +102,7 @@ const EditProfileDeatials = ({ profileEdit, params }: any) => {
         setAvatarToEdit(null);
     };
 
-    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (event: ChangeEvent<HTMLInputElement> ) => {
         const { name, value, type, files } = event.target;
 
         if (type === 'file' && files) {
@@ -176,15 +177,14 @@ const EditProfileDeatials = ({ profileEdit, params }: any) => {
                                 className={inputStyle}
                             />
                         </div>
-
                         <div className="flex flex-col">
-                            <label className="text-xl font-bold">Designation</label>
+                            <label className="text-xl font-bold">Age</label>
                             <input
                                 type="text"
-                                placeholder="designation"
-                                name="designation"
+                                placeholder="age"
+                                name="age"
                                 onChange={handleChange}
-                                value={profileToEditState.designation || ""}
+                                value={profileToEditState.age || ""}
                                 className={inputStyle}
                             />
                         </div>
@@ -200,13 +200,24 @@ const EditProfileDeatials = ({ profileEdit, params }: any) => {
                             />
                         </div>
                         <div className="flex flex-col">
-                            <label className="text-xl font-bold">Age</label>
+                            <label className="text-xl font-bold">Country</label>
                             <input
                                 type="text"
-                                placeholder="age"
-                                name="age"
+                                placeholder="country"
+                                name="country"
                                 onChange={handleChange}
-                                value={profileToEditState.age || ""}
+                                value={profileToEditState.country || ""}
+                                className={inputStyle}
+                            />
+                        </div>
+                        <div className="flex flex-col">
+                            <label className="text-xl font-bold">Designation</label>
+                            <input
+                                type="text"
+                                placeholder="designation"
+                                name="designation"
+                                onChange={handleChange}
+                                value={profileToEditState.designation || ""}
                                 className={inputStyle}
                             />
                         </div>
@@ -225,7 +236,7 @@ const EditProfileDeatials = ({ profileEdit, params }: any) => {
                             <button type='submit' className='px-3 py-2 rounded-full border border-blue-500 hover:bg-blue-500 hover:text-white'>
                                 Edit
                             </button>
-                            <Link href={"/profile"} className='px-3 py-2 rounded-full border border-red-500 hover:bg-red-500 hover:text-white'>
+                            <Link href={"/dashboard/profile"} className='px-3 py-2 rounded-full border border-red-500 hover:bg-red-500 hover:text-white'>
                                 Cancel
                             </Link>
                         </div>

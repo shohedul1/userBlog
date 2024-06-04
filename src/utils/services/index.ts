@@ -6,6 +6,7 @@ export interface UserProfile {
     designation: string;
     age: string;
     location: string;
+    country: string;
     about: string;
     avatar: { url: string, id: string };
     createdAt: Date;

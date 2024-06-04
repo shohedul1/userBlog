@@ -1,8 +1,7 @@
 import Cart from "../../components/Cart/Cart";
 
 
-export default function Home() {
-
+export default function Dashboard() {
 
   return (
     <div className="px-5 lg:px-20 bg-lime-50 h-full w-full py-10">

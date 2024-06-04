@@ -116,6 +116,7 @@ export const authOptions: NextAuthOptions = {
                             age: '',
                             location: '',
                             about: '',
+                            country: ''
                         });
                     }
 

@@ -13,7 +13,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         if (status === 'loading') {
             return;
         } else if (!session) {
-            router.push("/sigin");
+            router.push("/");
         }
     }, [session, status])
 

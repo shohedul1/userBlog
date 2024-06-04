@@ -49,7 +49,7 @@ const SigupPage = () => {
                     });
                     setState(initialState)
                     setTimeout(() => {
-                        router.push('/sigin');
+                        router.push('/');
                     }, 5000);
                 } else {
                     toast.error(data.message, {
@@ -130,7 +130,7 @@ const SigupPage = () => {
                             <FcGoogle className="w-8 h-8" />
                             Google
                         </button>
-                        <button type="button" onClick={() => signIn("github", { callbackUrl: "/" })} className="bg-white p-2 text-xl flex items-center gap-2 justify-center rounded-md">
+                        <button type="button" onClick={() => signIn("github", { callbackUrl: "/dashboard" })} className="bg-white p-2 text-xl flex items-center gap-2 justify-center rounded-md">
                             <FaGithub className="w-8 h-8" />
                             Github
                         </button>
@@ -138,7 +138,7 @@ const SigupPage = () => {
 
                     <p className="text-left text-sm mt-2 text-white">
                         Don&apos;t have an account?{" "}
-                        <Link href="/sigin" className="text-red-500 underline">
+                        <Link href="/" className="text-red-500 underline">
                             Sign In
                         </Link>
                     </p>
