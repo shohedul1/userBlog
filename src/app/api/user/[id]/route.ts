@@ -11,7 +11,6 @@ export async function GET(request: NextRequest, { params }: { params: Params }) 
     await connect(); // Ensure the database is connected
 
     const id = params.id;
-    console.log(id);
 
     try {
         const user = await User.findById(id).select("-password -__v");

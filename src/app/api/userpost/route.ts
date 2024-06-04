@@ -27,13 +27,13 @@ export async function POST(req: NextRequest) {
 }
 
 //get all data 
-export async function GET(req:NextRequest) {
+export async function GET(req: NextRequest) {
     await connect();
 
     try {
-        const blogs = await Userpost.find({}) 
+        const userposts = await Userpost.find({})
 
-        return NextResponse.json(blogs);
+        return NextResponse.json(userposts);
 
     } catch (error) {
         return NextResponse.json({

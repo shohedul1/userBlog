@@ -1,8 +1,7 @@
 'use client';
 import Profiledetails from '@/components/Profiledetails/Profiledetails';
-import { UserProfile, fetchUserProfile } from '@/utils/services';
+import { fetchUserProfile } from '@/utils/services';
 import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 

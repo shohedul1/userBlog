@@ -5,7 +5,6 @@ import { signOut, useSession } from 'next-auth/react';
 import { Pacifico } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 const pacifico = Pacifico({ subsets: ["latin"], weight: ["400"] }); // Corrected weights
@@ -36,7 +35,7 @@ const Navbar = () => {
     // Use a default imge if no avatar is found
     const imageUrl = profile?.avatar?.url || session?.user?.image || '/signin.gif';
 
-    console.log('navbav', profile)
+    // console.log('navbav', profile)
 
     const [toggle, setToggle] = useState(false);
 
