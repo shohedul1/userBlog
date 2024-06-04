@@ -64,7 +64,7 @@ const EditProfileDeatials = ({ profileEdit, params }: any) => {
             if (response.ok) {
                 toast.success("User updated successfully");
                 setTimeout(() => {
-                    window.location.reload();
+                   router.refresh();
                     router.push("/profile");
                 }, 500);
             } else {
