@@ -13,7 +13,7 @@ const Cart = ({ item }: any) => {
         </span>
 
     ));
-    const userpostDate =moment(item?.createdAt).format('lll')    
+    const userpostDate = moment(item?.createdAt).format('lll')
 
     return (
         <>
@@ -22,11 +22,11 @@ const Cart = ({ item }: any) => {
                     {userpostDate}
                 </div>
                 <div className="w-full h-80	">
-                    <Image 
-                    src={item?.image?.url} 
-                    priority alt="iamge" 
-                    width={500} height={500} 
-                    className="w-full h-full" />
+                    <Image
+                        src={item?.image?.url}
+                        priority alt="iamge"
+                        width={500} height={500}
+                        className="w-full h-full" />
                 </div>
                 <div className="flex justify-between">
                     <div>

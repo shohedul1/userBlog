@@ -165,7 +165,7 @@ const UserPost = () => {
 
 
 
-    console.log('user post', state);
+    // console.log('user post', state);
 
     const inputStyle = "mt-1 mb-2 w-full bg-slate-200 px-2 py-1 rounded focus:outline-blue-300 focus:placeholder-transparent placeholder:text-green-500";
     const formDiv = 'w-full bg-white max-w-xl m-auto p-5 flex rounded-md flex-col border-2 border-red-300';
