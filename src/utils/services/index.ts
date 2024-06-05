@@ -23,7 +23,7 @@ export interface UserPost {
     age?: string;
     category: string;
     quantity: string;
-    image?: object;
+    image?: { url: string, id: string };
     authorId: string;
     createdAt: string;
     updatedAt: string;
@@ -31,7 +31,18 @@ export interface UserPost {
 }
 
 
+// all user data get services
+export async function fetchAllUserProfile() {
+    const res = await fetch('/api/user', {
+        cache: "no-store"
+    });
+    if (res.ok) {
+        return res.json();
+    }
 
+}
+
+//any single user data get servies
 export const fetchUserProfile = async (id: string): Promise<any> => {
     try {
         const res = await fetch(`/api/user/${id}`, {
@@ -51,7 +62,7 @@ export const fetchUserProfile = async (id: string): Promise<any> => {
     }
 }
 
-//all user get
+//all user data get services
 export async function fetchUserpost() {
     const res = await fetch('/api/userpost', {
         cache: "no-store"

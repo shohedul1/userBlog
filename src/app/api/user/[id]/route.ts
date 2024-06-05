@@ -7,6 +7,7 @@ interface Params {
     id: string;
 }
 
+//any sigle user get
 export async function GET(request: NextRequest, { params }: { params: Params }) {
     await connect(); // Ensure the database is connected
 
@@ -26,7 +27,7 @@ export async function GET(request: NextRequest, { params }: { params: Params }) 
     }
 }
 
-
+//any sigle user updata
 export async function PATCH(request: NextRequest, { params }: { params: Params }) {
     await connect(); // Ensure the database is connected
 

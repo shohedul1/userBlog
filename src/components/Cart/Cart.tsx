@@ -1,3 +1,4 @@
+import moment from 'moment';
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -12,10 +13,15 @@ const Cart = ({ item }: any) => {
         </span>
 
     ));
+    const userpostDate =moment(item?.createdAt).format('lll')    
+
     return (
         <>
             <div className="w-full bg-emerald-50 gap-3 flex flex-col rounded-2xl p-5 hover:scale-105 hover:shadow-lg transition-all duration-300 hover:shadow-orange-500">
-                <div className="w-full min-h-80	">
+                <div>
+                    {userpostDate}
+                </div>
+                <div className="w-full h-80	">
                     <Image src={item?.image?.url} priority alt="iamge" width={100} height={100} className="w-full h-full" />
                 </div>
                 <div className="flex justify-between">

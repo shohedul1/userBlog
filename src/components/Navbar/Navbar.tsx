@@ -51,7 +51,7 @@ const Navbar = () => {
                 <Link href={"/dashboard"} className={`${pacifico.className} text-3xl hover:text-red-400`}>WebDev</Link>
                 <nav className='flex items-center gap-4'>
                     <ul className='flex gap-4'>
-                        <Link href={"/blog"}>BLOG</Link>
+                        <Link href={"/dashboard/blog"}>BLOG</Link>
                         <Link href={"/dashboard/userpost"}>USER POST</Link>
                     </ul>
                     <div onClick={handleClick} className='relative'>
