@@ -22,7 +22,11 @@ const Cart = ({ item }: any) => {
                     {userpostDate}
                 </div>
                 <div className="w-full h-80	">
-                    <Image src={item?.image?.url} priority alt="iamge" width={100} height={100} className="w-full h-full" />
+                    <Image 
+                    src={item?.image?.url} 
+                    priority alt="iamge" 
+                    width={500} height={500} 
+                    className="w-full h-full" />
                 </div>
                 <div className="flex justify-between">
                     <div>

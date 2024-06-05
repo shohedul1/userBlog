@@ -4,6 +4,7 @@ import { deletePhoto } from "@/utils/actions/uploadActions";
 import { UserPost, UserProfile, fetchAllUserProfile, fetchSingleUserpost } from "@/utils/services";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { IoStar } from "react-icons/io5";
@@ -107,9 +108,9 @@ const CartDetailes: React.FC<{ params: { id: string } }> = ({ params }) => {
                                 <div className="space-y-5">
                                     {session?.user?.id === userCart?.authorId && (
                                         <div className="flex items-center justify-center gap-5">
-                                            <button className="px-3 py-2 border border-lime-600 text-black rounded-full hover:bg-lime-200 font-bold hover:scale-105 duration-200 transition-all flex items-center gap-1">
+                                            <Link href={`/dashboard/cart/cartedit/${params.id}`} className="px-3 py-2 border border-lime-600 text-black rounded-full hover:bg-lime-200 font-bold hover:scale-105 duration-200 transition-all flex items-center gap-1">
                                                 <MdEdit /> Edit
-                                            </button>
+                                            </Link>
                                             <button
                                                 onClick={() => handleBlogDelete(userCart?.image?.id)}
                                                 className="px-3 py-2 border font-bold border-red-600 text-black rounded-full hover:bg-red-100 hover:scale-105 duration-200 transition-all flex items-center gap-1"

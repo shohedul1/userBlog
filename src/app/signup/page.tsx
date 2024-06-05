@@ -50,7 +50,7 @@ const SigupPage = () => {
                     setState(initialState)
                     setTimeout(() => {
                         router.push('/');
-                    }, 5000);
+                    }, 1000);
                 } else {
                     toast.error(data.message, {
                         position: 'top-center'

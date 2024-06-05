@@ -268,7 +268,7 @@ const UserPost = () => {
                                 className="w-full hover:scale-105 transition-all duration-300 m-auto bg-red-500 hover:bg-red-600 cursor-pointer text-white text-xl font-medium text-center py-1 rounded-full mt-4"
                             >
                                 {
-                                    loading ? "Submite" : " Create"
+                                    loading ? "Submite" : "Update"
                                 }
                             </button>
                         </form>

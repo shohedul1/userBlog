@@ -102,7 +102,7 @@ const EditProfileDeatials = ({ profileEdit, params }: any) => {
         setAvatarToEdit(null);
     };
 
-    const handleChange = (event: ChangeEvent<HTMLInputElement> ) => {
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const { name, value, type, files } = event.target;
 
         if (type === 'file' && files) {
